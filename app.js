@@ -39,6 +39,13 @@ cars.find(c=>c.id==='bmw-3').image='assets/cars/bmw-series-3/main.jpg';
 cars.find(c=>c.id==='i30').image='assets/cars/hyundai-i30/main.jpg';
 cars.find(c=>c.id==='mg3').image='assets/cars/mg3/main.jpg';
 cars.find(c=>c.id==='fabia-petrol').image='assets/cars/skoda-fabia-petrol/main.jpg';
+cars.find(c=>c.id==='bayon').image='assets/cars/hyundai-bayon/main.jpeg';
+cars.find(c=>c.id==='stonic-1').image='assets/cars/kia-stonic/main.png';
+cars.find(c=>c.id==='stonic-2').image='assets/cars/kia-stonic/main.png';
+cars.find(c=>c.id==='stonic-3').image='assets/cars/kia-stonic/main.png';
+cars.find(c=>c.id==='kona').image='assets/cars/hyundai-kona/main.jpeg';
+cars.find(c=>c.id==='golf-6').image='assets/cars/volkswagen-golf-6/main.png';
+cars.find(c=>c.id==='golf-7').image='assets/cars/volkswagen-golf-7/main.jpeg';
 
 const carGalleries={
   'audi-a5':['assets/cars/audi-a5/main.png','assets/cars/audi-a5/02.png','assets/cars/audi-a5/03.png'],
@@ -73,6 +80,13 @@ Object.assign(carGalleries,{
   'fabia-petrol':['assets/cars/skoda-fabia-petrol/main.jpg','assets/cars/skoda-fabia-petrol/rear.jpg'],
   'fabia-diesel':['assets/cars/skoda-fabia-diesel/main.jpeg','assets/cars/skoda-fabia-diesel/rear.jpeg','assets/cars/skoda-fabia-diesel/dashboard.jpeg','assets/cars/skoda-fabia-diesel/interior.jpeg'],
   'sportage-2018':['assets/cars/kia-sportage-2018/main.png','assets/cars/kia-sportage-2018/rear.png']
+  ,'bayon':['assets/cars/hyundai-bayon/main.jpeg','assets/cars/hyundai-bayon/rear.jpeg','assets/cars/hyundai-bayon/front.jpeg','assets/cars/hyundai-bayon/front-cabin.jpeg','assets/cars/hyundai-bayon/rear-seats.jpeg']
+  ,'stonic-1':['assets/cars/kia-stonic/main.png','assets/cars/kia-stonic/side.jpeg','assets/cars/kia-stonic/interior.jpeg']
+  ,'stonic-2':['assets/cars/kia-stonic/main.png','assets/cars/kia-stonic/side.jpeg','assets/cars/kia-stonic/interior.jpeg']
+  ,'stonic-3':['assets/cars/kia-stonic/main.png','assets/cars/kia-stonic/side.jpeg','assets/cars/kia-stonic/interior.jpeg']
+  ,'kona':['assets/cars/hyundai-kona/main.jpeg','assets/cars/hyundai-kona/rear-side.jpeg','assets/cars/hyundai-kona/luggage.jpeg','assets/cars/hyundai-kona/interior.jpeg']
+  ,'golf-6':['assets/cars/volkswagen-golf-6/main.png','assets/cars/volkswagen-golf-6/front.png','assets/cars/volkswagen-golf-6/interior.jpeg']
+  ,'golf-7':['assets/cars/volkswagen-golf-7/main.jpeg','assets/cars/volkswagen-golf-7/front.jpeg','assets/cars/volkswagen-golf-7/rear.jpeg','assets/cars/volkswagen-golf-7/interior.jpeg']
 });
 let blocked={}; const money=n=>`€${Number.isInteger(n)?n:n.toFixed(2)}`; const iso=d=>d.toISOString().slice(0,10); const today=iso(new Date());
 document.querySelectorAll('input[type=date]').forEach(i=>{i.min=today;i.max=C.seasonEnd});
