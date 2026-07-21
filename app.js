@@ -1,5 +1,5 @@
 const C=window.KAMBOS_CONFIG, S=C.supabaseUrl&&C.supabaseAnonKey?supabase.createClient(C.supabaseUrl,C.supabaseAnonKey):null;
-let currentLang=localStorage.getItem('kambos_lang_v12')||'en';
+let currentLang=localStorage.getItem('kambos_lang_v13')||'en';
 const ui={sq:{available:'makina të disponueshme',chosen:'për datat e zgjedhura',perDay:'/ ditë',doors:'4 dyer',photo:'Foto',fullName:'Emri i plotë',phone:'Telefoni',pickupTime:'Ora e marrjes',returnTime:'Ora e kthimit',selectDates:'Zgjidh datën e marrjes dhe kthimit',availableDay:'E lirë',reserved:'E rezervuar',selected:'E zgjedhur',pickup:'Marrja',chooseReturn:'zgjidh kthimin',childSeat:'Karrige për fëmijë',insurance:'Siguracion e plotë',crossBorder:'Cross border',addDriver:'Shofer shtesë',note:'Shënim (opsional)',seePrice:'Zgjidh datat për të parë çmimin.',send:'Dërgo kërkesën në WhatsApp',confirmation:'Kërkesa konfirmohet vetëm pasi KamboS t’ju përgjigjet.',days:'ditë',car:'Makina',total:'Totali',badOrder:'Data e kthimit nuk mund të jetë para datës së marrjes.',blocked:'Këto data janë të bllokuara për këtë makinë.',blockedRange:'Intervali përmban data të rezervuara. Zgjidh një interval tjetër.'},en:{available:'cars available',chosen:'for the selected dates',perDay:'/ day',doors:'4 doors',photo:'Photo',fullName:'Full name',phone:'Phone',pickupTime:'Pick-up time',returnTime:'Return time',selectDates:'Select pick-up and return dates',availableDay:'Available',reserved:'Reserved',selected:'Selected',pickup:'Pick-up',chooseReturn:'choose return date',childSeat:'Child seat',insurance:'Full insurance',crossBorder:'Cross border',addDriver:'Additional driver',note:'Note (optional)',seePrice:'Select dates to see the price.',send:'Send request on WhatsApp',confirmation:'The request is confirmed only after KamboS replies.',days:'days',car:'Car',total:'Total',badOrder:'The return date cannot be before the pick-up date.',blocked:'These dates are unavailable for this car.',blockedRange:'This range contains reserved dates. Please select another range.'}};
 const T=()=>ui[currentLang];
 const staticCopy={
@@ -48,6 +48,13 @@ cars.find(c=>c.id==='bmw-3').image='assets/cars/bmw-series-3/main.jpg';
 cars.find(c=>c.id==='i30').image='assets/cars/hyundai-i30/main.jpg';
 cars.find(c=>c.id==='mg3').image='assets/cars/mg3/main.jpg';
 cars.find(c=>c.id==='fabia-petrol').image='assets/cars/skoda-fabia-petrol/main.jpg';
+cars.find(c=>c.id==='bayon').image='assets/cars/hyundai-bayon/main.jpg';
+cars.find(c=>c.id==='stonic-1').image='assets/cars/kia-stonic/main.jpg';
+cars.find(c=>c.id==='stonic-2').image='assets/cars/kia-stonic/main.jpg';
+cars.find(c=>c.id==='stonic-3').image='assets/cars/kia-stonic/main.jpg';
+cars.find(c=>c.id==='kona').image='assets/cars/hyundai-kona/main.jpg';
+cars.find(c=>c.id==='golf-6').image='assets/cars/volkswagen-golf-6-automatic/main.png';
+cars.find(c=>c.id==='golf-7').image='assets/cars/volkswagen-golf-7-automatic/main.jpg';
 
 const carGalleries={
   'audi-a5':['assets/cars/audi-a5/main.png','assets/cars/audi-a5/02.png','assets/cars/audi-a5/03.png'],
@@ -81,6 +88,13 @@ Object.assign(carGalleries,{
   'peugeot-2019':['assets/cars/peugeot-208/main.png','assets/cars/peugeot-208/side.png','assets/cars/peugeot-208/interior.jpeg'],
   'fabia-petrol':['assets/cars/skoda-fabia-petrol/main.jpg','assets/cars/skoda-fabia-petrol/rear.jpg'],
   'fabia-diesel':['assets/cars/skoda-fabia-diesel/main.jpeg','assets/cars/skoda-fabia-diesel/rear.jpeg','assets/cars/skoda-fabia-diesel/dashboard.jpeg','assets/cars/skoda-fabia-diesel/interior.jpeg'],
+  'bayon':['assets/cars/hyundai-bayon/main.jpg','assets/cars/hyundai-bayon/rear.jpg','assets/cars/hyundai-bayon/front.jpg','assets/cars/hyundai-bayon/front-cabin.jpg','assets/cars/hyundai-bayon/rear-seats.jpg'],
+  'stonic-1':['assets/cars/kia-stonic/main.jpg','assets/cars/kia-stonic/side.jpg','assets/cars/kia-stonic/cabin.jpg'],
+  'stonic-2':['assets/cars/kia-stonic/main.jpg','assets/cars/kia-stonic/side.jpg','assets/cars/kia-stonic/cabin.jpg'],
+  'stonic-3':['assets/cars/kia-stonic/main.jpg','assets/cars/kia-stonic/side.jpg','assets/cars/kia-stonic/cabin.jpg'],
+  'kona':['assets/cars/hyundai-kona/main.jpg','assets/cars/hyundai-kona/rear-side.jpg','assets/cars/hyundai-kona/luggage.jpg','assets/cars/hyundai-kona/dashboard.jpg'],
+  'golf-6':['assets/cars/volkswagen-golf-6-automatic/main.png','assets/cars/volkswagen-golf-6-automatic/front.png','assets/cars/volkswagen-golf-6-automatic/interior.jpg'],
+  'golf-7':['assets/cars/volkswagen-golf-7-automatic/main.jpg','assets/cars/volkswagen-golf-7-automatic/front.jpg','assets/cars/volkswagen-golf-7-automatic/rear.jpg','assets/cars/volkswagen-golf-7-automatic/interior.jpg'],
   'sportage-2018':['assets/cars/kia-sportage-2018/main.png','assets/cars/kia-sportage-2018/rear.png']
 });
 let blocked={}; const money=n=>`€${Number.isInteger(n)?n:n.toFixed(2)}`; const iso=d=>d.toISOString().slice(0,10); const today=iso(new Date());
@@ -114,4 +128,4 @@ function initCalendar(f,c){
   calPrev.onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1,12);draw()}; calNext.onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1,12);draw()}; draw();
 }
 const reviews={sq:[['Ardit K.','Makina ishte e pastër, komode dhe gati në kohë. Rezervimi ishte shumë i thjeshtë.'],['Elona M.','Komunikim i shpejtë dhe shërbim shumë korrekt. Patjetër do të rezervoj përsëri.'],['Besnik H.','Çmimi ishte transparent dhe makina ishte në gjendje shumë të mirë.'],['Sara D.','Rezervimi në WhatsApp ishte i lehtë dhe përgjigjja erdhi shumë shpejt.'],['Erion L.','Shërbim profesional, staf i sjellshëm dhe makinë shumë e pastër.']],en:[['Ardit K.','The car was clean, comfortable and ready on time. Booking was very easy.'],['Elona M.','Fast communication and excellent service. I will definitely book again.'],['Besnik H.','The price was transparent and the car was in very good condition.'],['Sara D.','Booking through WhatsApp was easy and the reply came very quickly.'],['Erion L.','Professional service, friendly staff and a very clean car.']]};function renderReviews(){reviewTrack.innerHTML=[...reviews[currentLang],...reviews[currentLang]].map(r=>`<article><div class="stars">★★★★★</div><p>“${r[1]}”</p><b>${r[0]}</b></article>`).join('')}
-findCars.onclick=()=>render(document.querySelector('.filter.active').dataset.filter);document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelector('.filter.active').classList.remove('active');b.classList.add('active');render(b.dataset.filter)});document.querySelector('.close').onclick=()=>bookingModal.classList.remove('show');bookingModal.onclick=e=>{if(e.target===bookingModal)bookingModal.classList.remove('show')};document.querySelector('.menu').onclick=()=>document.querySelector('nav').classList.toggle('open');document.querySelector('.lang').onclick=()=>{currentLang=currentLang==='sq'?'en':'sq';localStorage.setItem('kambos_lang_v12',currentLang);bookingModal.classList.remove('show');translateStatic();render(document.querySelector('.filter.active').dataset.filter);renderReviews()};translateStatic();renderReviews();render();loadBlocked();
+findCars.onclick=()=>render(document.querySelector('.filter.active').dataset.filter);document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelector('.filter.active').classList.remove('active');b.classList.add('active');render(b.dataset.filter)});document.querySelector('.close').onclick=()=>bookingModal.classList.remove('show');bookingModal.onclick=e=>{if(e.target===bookingModal)bookingModal.classList.remove('show')};document.querySelector('.menu').onclick=()=>document.querySelector('nav').classList.toggle('open');document.querySelector('.lang').onclick=()=>{currentLang=currentLang==='sq'?'en':'sq';localStorage.setItem('kambos_lang_v13',currentLang);bookingModal.classList.remove('show');translateStatic();render(document.querySelector('.filter.active').dataset.filter);renderReviews()};translateStatic();renderReviews();render();loadBlocked();
