@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Vehicle photo coming soon</title>
+  <desc id="desc">KamboS Rental Car branded photo placeholder</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07104f"/><stop offset="1" stop-color="#1268b4"/></linearGradient></defs>
+  <rect width="800" height="800" rx="54" fill="url(#g)"/>
+  <circle cx="400" cy="315" r="142" fill="none" stroke="#fff" stroke-width="12" opacity=".92"/>
+  <path d="M278 335h244l-27-66c-7-17-24-28-43-28H348c-19 0-36 11-43 28l-27 66Zm-18 0h280c20 0 36 16 36 36v67c0 14-11 25-25 25h-24v31c0 12-10 22-22 22h-31c-12 0-22-10-22-22v-31H348v31c0 12-10 22-22 22h-31c-12 0-22-10-22-22v-31h-24c-14 0-25-11-25-25v-67c0-20 16-36 36-36Z" fill="#fff"/>
+  <circle cx="297" cy="397" r="24" fill="#1268b4"/><circle cx="503" cy="397" r="24" fill="#1268b4"/>
+  <text x="400" y="580" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="58" font-weight="700">KamboS</text>
+  <text x="400" y="635" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" letter-spacing="7">RENTAL CAR</text>
+  <text x="400" y="705" fill="#dcecff" text-anchor="middle" font-family="Arial,sans-serif" font-size="25">PHOTO COMING SOON</text>
+</svg>

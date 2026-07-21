@@ -1,0 +1,7 @@
+KamboS Rental Car final rebuild
+Version: 12
+Generated: 2026-07-21
+
+English-first bilingual interface.
+No public discount advertising or card prices.
+Correct uploaded vehicle galleries and branded placeholders for missing photos.
