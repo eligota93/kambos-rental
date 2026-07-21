@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
-
-Sitemap: https://kambosrental.com/sitemap.xml
